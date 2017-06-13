@@ -1,3 +1,47 @@
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Raleway Light'), local('Raleway-Light'), url(https://fonts.gstatic.com/s/raleway/v11/-_Ctzj9b56b8RgXW8FArifk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v11/0dTEPzkLWceF7z0koJaX1A.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Raleway Bold'), local('Raleway-Bold'), url(https://fonts.gstatic.com/s/raleway/v11/JbtMzqLaYbbbCL9X6EvaI_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Raleway Black'), local('Raleway-Black'), url(https://fonts.gstatic.com/s/raleway/v11/PKCRbVvRfd5n7BTjtGiFZPk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Raleway Italic'), local('Raleway-Italic'), url(https://fonts.gstatic.com/s/raleway/v11/7dO2Hj7qB8nRVFK0svQqRhJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Raleway Italic'), local('Raleway-Italic'), url(https://fonts.gstatic.com/s/raleway/v11/IIm-lPOtfVKQy0GMiczF_1tXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
 html {
     font-size: 12px;
 }
@@ -5,53 +49,213 @@ html {
 body {
     background-color: #d7d7d7;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Raleway, Helvetica, Arial, sans-serif;
 }
+
 a {
     text-decoration: none;
 }
+
 nav {
     background-color: #fff;
-    position:absolute;
-    height:56px;
+    position: absolute;
+    height: 56px;
     display: flex;
     flex-flow: nowrap row;
-    justify-content: space-between; 
-    align-items:center;
+    justify-content: space-between;
+    align-items: center;
     /*padding: 4px 24px;*/
     width: 100%;
 }
-nav .logo {
-    padding-left:24px;
-}
-    nav .logo a {
-        display:flex;
-        justify-content:center;
-        color: #333;
-        height:100%;
+
+    nav .logo {
+        padding-left: 24px;
     }
-nav .logo img {
+
+        nav .logo a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+            height: 100%;
+        }
+
+        nav .logo img {
+            height: 85%;
+        }
+
+        nav .logo h1 {
+            font-weight: bold;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+
+            nav .logo h1 span {
+                font-weight: 100;
+                color: #9A9A9A;
+            }
+
+    nav .links {
+        padding-right: 24px;
+        display:flex;
+        flex-flow:row nowrap;
+    }
+
+        nav .links a {
+            margin-right: 16px;
+            color: #333;
+            font-size: 1.25rem;
+        }
+
+            nav .links a:last-child {
+                margin-right: 0;
+            }
+    nav.mobile {
+        display: none;
+        height: 64px;
+      
+    }
+    nav.mobile .logo-image{
+        padding-left: 24px;
+    }
+    nav.mobile .icon:last-child{
+        padding-right: 24px;
+    }
+
+.container {
+    top: 64px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0;
     height: 100%;
-}
-nav .logo h1 {
-    font-weight:bold;
-    font-size:1.8rem;
-    text-transform:uppercase;
-}
-nav .logo h1 span {
-    font-weight:100;
-    color: #777;
+    min-height: 90vh;
 }
 
-nav .links {
-    padding-right:24px;
+.jumbotron {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    height: 100%;
+    align-items: stretch;
+    flex: 1;
+    min-height: 100vh;
+
 }
 
-nav .links a {
-    margin-right: 16px;
-        color: #333;
-        font-size: 1.25rem;
+    .jumbotron .content-text {
+        flex: 1 1 423px;
+        padding: 16px;
+        order: 2;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        padding-right:10%;
+    }
+
+    .jumbotron .content-media {
+        /*background-color: #F1F2F3;*/
+        flex: 1 1 60%;
+        padding: 32px 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        order: 1;
+    }
+    .jumbotron.white {
+        background-color: #fff;
+    }
+    .section-header {
+        padding-bottom: 32px;
+    }
+.section-header .section-title {
+    text-align: left;
+    font-weight: 900;
+    font-size: 3.5rem;
+    padding-bottom: 1rem;
+    margin: 0;
+    color: #4C4C4C;
 }
-nav .links a:last-child {
-    margin-right: 0;
+
+
+.section-header h2.section-subtitle {
+    text-align: left;
+    font-size: 2rem;
+    line-height: 1.5;
+    font-weight: bold;
+    color: #4C4C4C;
+}
+.section-header button {
+    padding: 8px;
+    width: 100%;
+    background-color: #4C4C4C;
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 2;
+}
+
+figure.figure-image {
+    display: flex;
+    justify-content: flex-start;
+    flex:1;
+    min-height: 150px;
+    flex-flow: row wrap;
+    margin:0;
+}
+
+figure .section-image {
+    text-align: center;
+    display: block;
+    /*margin: 0 auto;*/
+    max-width: 100%;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+    figure .section-image img {
+        max-width: 100%;
+        /*max-height: 350px;*/
+        width:100%;
+    }
+
+@media only screen and (max-width: 599px) {
+    nav.main {
+        display:none;
+    }
+    nav.mobile {
+        display:inline-flex;
+        justify-content:space-between;
+        align-content:center;
+
+    }
+    .jumbotron {
+        flex-direction:column;
+
+    }
+        .jumbotron .content-media {
+            height: 180px;
+            background-color: #9A9A9A;
+        }
+    .jumbotron .content-text {
+        padding-top:32px;
+        padding-right:16px;
+    }
+    figure .section-image img {
+        width:auto;
+        height: 100%;
+    }
+    .section-header .section-title {
+        font-size: 2.5rem;
+        line-height: 1.5;
+        margin:32px 0;
+        padding-bottom:0;
+    }
+    .section-header .section-subtitle {
+        margin-bottom: 2rem;
+    }
+    .section-header button {
+        background-color: #9A9A9A;
+    }
 }
