@@ -177,6 +177,7 @@ nav {
 
     .jumbotron.white {
         background-color: #F2F5F5;
+        border-bottom: 1px solid #ccc;
     }
 
         .jumbotron.white .content-media .section-header {
@@ -219,8 +220,26 @@ nav {
         font-size: 1.5rem;
         line-height: 2;
     }
+    .section-header.top {
+        background-color: #F2F5F5;
+        width: 100%;
+        text-align: center;
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
 
-figure.figure-image {
+        .section-header.top .section-title {
+            padding: 32px 0;
+            text-align: center;
+        }
+
+        .section-header.top .section-header {
+            padding: 0;
+        }
+
+figure.figure-image, 
+figure.figure-video {
     display: flex;
     justify-content: flex-start;
     flex: 1;
@@ -229,7 +248,8 @@ figure.figure-image {
     margin: 0;
 }
 
-figure .section-image {
+figure .section-image,
+figure .section-video{
     text-align: center;
     display: inline-flex;
     /*margin: 0 auto;*/
@@ -239,10 +259,15 @@ figure .section-image {
     width: 100%;
 }
 
-    figure .section-image img {
+
+    figure .section-image img,
+    figure .section-video video {
         max-width: 100%;
         /*max-height: 350px;*/
         width: 100%;
+    }
+    figure .section-video video {
+        height:100%;
     }
 
 .content-text.cards {
@@ -260,7 +285,7 @@ figure .section-image {
     align-items: flex-start;
 }
 
-.card #card1.card-image {
+/*.card #card1.card-image {
     background-image: url(../images/information-orientation.jpg);
 }
 
@@ -270,7 +295,7 @@ figure .section-image {
 
 .card #card3.card-image {
     background-image: url(../images/information-guest-lecture.jpg);
-}
+}*/
 
 .card .card-image {
     width: 35%;
@@ -287,12 +312,19 @@ figure .section-image {
         max-height: 185px;
         overflow: hidden;
     }
+    .card .card-image img.image {
+
+    }
+    .card .card-image img.mobile-image {
+        display:none;
+    }
 
 .card .card-info {
     padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    max-width: 60%;
 }
 
     .card .card-info h2 {
@@ -379,6 +411,25 @@ figure.feature-image {
     margin: 0;
 }
 
+footer {
+    padding: 0 24px 4em;
+    background-color:#F2F5F5;
+}
+footer p, footer a{
+    padding:16px 0;
+}
+footer p {
+    text-align:left;
+    display:inline-block;
+}
+footer a {
+    text-align:right;
+    display:inline-block;
+    float:right;
+}
+footer a:last-child {
+    margin-right:1rem;
+}
 @media only screen and (max-width: 599px) {
     nav.main {
         display: none;
@@ -407,6 +458,13 @@ figure.feature-image {
         .jumbotron.white .content-media {
             display: none;
         }
+            .jumbotron.white .content-media.video {
+                display: block;
+                background-color: #F2F5F5
+            }
+        .jumbotron.white .content-media.video .section-header {
+            display:none;
+        }
 
     figure .section-image img {
         width: auto;
@@ -428,6 +486,13 @@ figure.feature-image {
         background-color: #9A9A9A;
     }
 
+
+    .section-header.top {
+        padding-bottom:0;
+    }
+    .section-header.top .section-title{
+        margin:0;
+    } 
     .content-text.cards {
         width: 100%;
         padding: 0;
@@ -442,10 +507,21 @@ figure.feature-image {
         }
         .cards .card .card-image {
             width: 100%;
+            height: 272px;
+            display:flex;
         }
+    .card .card-image img.image {
+        display: none;
+    }
+
+    .card .card-image img.mobile-image {
+        display:block;
+        max-height: 272px;
+    }
 
     .card .card-info {
         padding: 32px 16px;
+        max-width: 100%;
     }
 
     .landing-page {
@@ -467,4 +543,22 @@ figure.feature-image {
     }
     .one-third .feature-info h2  {
     }
+    .layout-2 .content-text.cards {
+        display:none;
+    }
+    .layout-2 .jumbotron {
+        min-height:unset;
+        height:auto;
+    }
+    .layout-2 .jumbotron .content-media {
+        flex:unset;
+        padding: 0;
+        height:270px;
+    }
+    footer {
+        padding: 8px 24px 1em;
+    }
+        footer a {
+            display:none;
+        }
 }
